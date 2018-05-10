@@ -246,7 +246,7 @@ public void buyContent(Content con)
 		{ 
 		 if(var == name)   
 		 {
-			content.appPrice=content.appPrice * (20/100); 
+			content.appPrice=content.appPrice * (80/100); 
 		 }
 		}
        content.numberOfdowns +=1;
@@ -263,7 +263,8 @@ public void buyContent(Content con)
 public class PlayStore {
 
 	public static void main(String[] args) {
-		
+
+	/*
 PlayStore admin = new PlayStore();
 		//adding new readings
 		String[] authors ={"L. Tolstoy"};
@@ -340,7 +341,7 @@ PlayStore admin = new PlayStore();
 		g1.addReviews(cmnt2);
 
 		//showing all reviews including the replies on object g1
-		g1.printAllReview();
+		g1.printAllReview(); */
 	}
 
 }
