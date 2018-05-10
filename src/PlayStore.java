@@ -246,7 +246,7 @@ public void buyContent(Content con)
 		{ 
 		 if(var == name)   
 		 {
-			content.appPrice=content.appPrice * (80/100); 
+			content.appPrice=content.appPrice *(0.8); 
 		 }
 		}
        content.numberOfdowns +=1;
