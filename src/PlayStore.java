@@ -16,34 +16,34 @@ abstract class Content{
 	int numberOfdowns;
 	double appPrice;
 	ArrayList<Comment> review = new ArrayList<Comment>();
-	ArrayList<Content> Contents = new ArrayList<Content>();
 
-	public Content(String id, String Cname, int dwonloads, double CappPrice ,ArrayList<Comment> Creview ) 
+
+	public Content(String id, String Cname, int downloads, double CappPrice ,ArrayList<Comment> Creview ) 
 	{
 		ID = id;
 		applicationName = Cname;
-		numberOfdowns =  dwonloads;
+		numberOfdowns =  downloads;
 		appPrice = CappPrice;
 		review = Creview;
 
 	}	
 	
-	public Content(String id, String Cname, int dwonloads, double CappPrice  ) 
+	public Content(String id, String Cname, int downloads, double CappPrice  ) 
 	{
 		ID = id;
 		applicationName = Cname;
-		numberOfdowns =  dwonloads;
+		numberOfdowns =  downloads;
 		appPrice = CappPrice;
 
 	}	
 
 	/*
 	 * constructor without  ArrayList<Comment>
-	 *  public Content(String id, String name, int dwonloads, double CappPrice  ) 
+	 *  public Content(String id, String name, int downloads, double CappPrice  ) 
 			{
 			ID = id;
 			applicationName = name;
-			numberOfdowns =  dwonloads;
+			numberOfdowns =  downloads;
 			price = CappPrice;
 
 			}*/	
@@ -71,8 +71,8 @@ abstract class Content{
 class Game extends Content {
 	boolean isMultiPlayer;
 	private OS os;
-	public Game(String id, String cname, int dwonloads, double CappPrice,  boolean isMultiPl ,OS cos) {
-		super(id, cname,dwonloads,CappPrice);
+	public Game(String id, String cname, int downloads, double CappPrice,  boolean isMultiPl ,OS cos) {
+		super(id, cname,downloads,CappPrice);
 		isMultiPlayer = isMultiPl;
 		os = cos;
 	}
@@ -100,13 +100,17 @@ abstract class Reading extends Content {
 	String genre;
 	int  numberOfpages;
 
-	public Reading (String id, String name, int dwonloads, double AppPrice, String Cpublisher,String Cgenre, int CnumberOfpages )
+	ArrayList<Reading> ReadingsList = new ArrayList<>();
+	
+	
+	public Reading (String id, String name, int downloads, double AppPrice, String Cpublisher,String Cgenre, int CnumberOfpages )
 	{
-		super(id, name,dwonloads,AppPrice);
+		super(id, name,downloads,AppPrice);
 		publisher = Cpublisher;
 		genre = Cgenre; 
 		numberOfpages = CnumberOfpages;
 
+		ReadingsList.add(id, name, downloads, AppPrice, publisher, genre, numberOfpages);
 	}
 
 	public Reading (String id, String name, double AppPrice, String Cpublisher,String Cgenre, int CnumberOfpages )
@@ -116,6 +120,7 @@ abstract class Reading extends Content {
 		genre = Cgenre; 
 		numberOfpages = CnumberOfpages;
 
+		ReadingsList.add(id, name, AppPrice, publisher, genre, numberOfpages);
 	}
 	
 	public Reading (String id, String name, String Cpublisher,String Cgenre, int CnumberOfpages )
@@ -124,6 +129,8 @@ abstract class Reading extends Content {
 		publisher = Cpublisher;
 		genre = Cgenre; 
 		numberOfpages = CnumberOfpages;
+		
+		ReadingsList.add(id, name, AppPrice, publisher, genre, numberOfpages);
 
 	}
 	
@@ -135,9 +142,9 @@ abstract class Reading extends Content {
 ////////////////////////////////////////////////////////////////////////////////////
 class Book extends Reading {
 	String[] author;
-	public 	Book(String id, String name, int dwonloads, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String[] Cauthor)
+	public 	Book(String id, String name, int downloads, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String[] Cauthor)
 	{
-		super ( id,  name,  dwonloads,  AppPrice,  Cpublisher, Cgenre,  numberOfpages);
+		super ( id,  name,  downloads,  AppPrice,  Cpublisher, Cgenre,  numberOfpages);
 		author = Cauthor;
 
 	}
@@ -161,9 +168,9 @@ class Book extends Reading {
 /////////////////////////////////////////////////////////////////////////////////
 class Magazine extends Reading {
 	String title;
-	public 	Magazine(String id, String name, int dwonloads, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String Ctitle)
+	public 	Magazine(String id, String name, int downloads, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String Ctitle)
 	{
-		super ( id,  name,  dwonloads,  AppPrice,  Cpublisher, Cgenre,  numberOfpages);
+		super ( id,  name,  downloads,  AppPrice,  Cpublisher, Cgenre,  numberOfpages);
 		title = Ctitle;
 
 	}
@@ -194,7 +201,7 @@ class Comment{
 	{
 		user = u;
 		comment = comm;
-		//Comment cmnt = new Comment(u1, â€œThis is a fantastic game!â€�);
+		//Comment cmnt = new Comment(u1, "This is a fantastic game!");
 	}
 
 }
@@ -291,6 +298,10 @@ public class PlayStore {
 		/*
 PlayStore admin = new PlayStore();
 		//adding new readings
+	 
+ 		ArrayList<Content> Contents = new ArrayList<Content>();
+		
+ 		
 		String[] authors ={"L. Tolstoy"};
 		Book b1 = new Book("R1", "War and Peace", 12, "The Russian Messengerâ€Ž", "Novel", 1225, authors);
 		String[] authors2 ={"F. Scott Fitzgerald"};
@@ -368,12 +379,12 @@ PlayStore admin = new PlayStore();
 		g1.printAllReview(); */
 	}
 
-	public genrePull()
+	public String showReadingOfGenre(ReadingsList)
 	{
-		System.println("Please type the genre of book/magazine that you would like to retrieve");
-		genreSelect = new userIn.next();
+		System.out.println("Please type the genre of book/magazine that you would like to retrieve");
 		System.out.println();
-
-		List<Contents>genrePull == getGenre();
+		ReadingGenre = new userIn.next();
+		
+		if(ReadingsList.contains(ReadingGenre);
 	}
 }
