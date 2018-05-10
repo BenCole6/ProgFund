@@ -126,7 +126,11 @@ abstract class Reading extends Content {
 		numberOfpages = CnumberOfpages;
 
 	}
-
+	
+	public String getGenre()
+	{
+		return genre;
+	}
 }
 ////////////////////////////////////////////////////////////////////////////////////
 class Book extends Reading {
@@ -370,6 +374,6 @@ PlayStore admin = new PlayStore();
 		genreSelect = new userIn.next();
 		System.out.println();
 
-		List<Contents>
+		List<Contents>genrePull == getGenre();
 	}
 }
