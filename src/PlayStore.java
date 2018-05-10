@@ -131,19 +131,22 @@ abstract class Reading extends Content {
 ////////////////////////////////////////////////////////////////////////////////////
 class Book extends Reading {
 	String[] author;
-	public 	Book(String id, String name, int dwonloads, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String[] Cauthor) {
+	public 	Book(String id, String name, int dwonloads, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String[] Cauthor)
+	{
 		super ( id,  name,  dwonloads,  AppPrice,  Cpublisher, Cgenre,  numberOfpages);
 		author = Cauthor;
 
 	}
 
-	public 	Book(String id, String name, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String[] Cauthor) {
+	public 	Book(String id, String name, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String[] Cauthor)
+	{
 		super ( id,  name,   AppPrice,  Cpublisher, Cgenre,  numberOfpages);
 		author = Cauthor;
 
 	}	
 
-	public 	Book(String id, String name,  String Cpublisher,String Cgenre, int numberOfpages, String[] Cauthor) {
+	public 	Book(String id, String name,  String Cpublisher,String Cgenre, int numberOfpages, String[] Cauthor)
+	{
 		super ( id,  name,  Cpublisher, Cgenre,  numberOfpages);
 		author = Cauthor;
 
@@ -154,19 +157,22 @@ class Book extends Reading {
 /////////////////////////////////////////////////////////////////////////////////
 class Magazine extends Reading {
 	String title;
-	public 	Magazine(String id, String name, int dwonloads, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String Ctitle) {
+	public 	Magazine(String id, String name, int dwonloads, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String Ctitle)
+	{
 		super ( id,  name,  dwonloads,  AppPrice,  Cpublisher, Cgenre,  numberOfpages);
 		title = Ctitle;
 
 	}
 
-	public 	Magazine(String id, String name, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String Ctitle) {
+	public 	Magazine(String id, String name, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String Ctitle)
+	{
 		super ( id,  name,   AppPrice,  Cpublisher, Cgenre,  numberOfpages);
 		title = Ctitle;
 		//Magazine(â€œM21â€�, â€œForbesâ€�, 8, â€œForbes Mediaâ€�, â€œBusinessâ€�, 50,â€œWorldâ€™s richest under 30â€�);
 	}	
 
-	public 	Magazine(String id, String name,  String Cpublisher,String Cgenre, int numberOfpages, String Ctitle) {
+	public 	Magazine(String id, String name,  String Cpublisher,String Cgenre, int numberOfpages, String Ctitle)
+	{
 		super ( id,  name,  Cpublisher, Cgenre,  numberOfpages);
 		title = Ctitle;
 		//Magazine(â€œM21â€�, â€œForbesâ€�,  â€œForbes Mediaâ€�, â€œBusinessâ€�, 50,â€œWorldâ€™s richest under 30â€�);	
@@ -180,7 +186,8 @@ class Comment{
 	private User user;
 	String comment;
 	Object [] commentArray;
-	Comment(User u, String comm){
+	Comment(User u, String comm)
+	{
 		user = u;
 		comment = comm;
 		//Comment cmnt = new Comment(u1, â€œThis is a fantastic game!â€�);
@@ -193,7 +200,8 @@ class OS{
 	String TypeOfOS;
 	int versionNumber;
 
-	public OS(String OStype, int versionNum) {
+	public OS(String OStype, int versionNum)
+	{
 		TypeOfOS = 	OStype;
 		versionNumber = versionNum;
 
@@ -203,7 +211,7 @@ class OS{
 
 }
 /////////////////////////////////////////////////////////////////////////////////
-class User{
+class User {
 
 	String ID;
 	String name;
@@ -221,7 +229,8 @@ class User{
 		os = Cos;
 	}
 
-	public User (String id, String Cname, String CphoneNum, OS Cos) {
+	public User (String id, String Cname, String CphoneNum, OS Cos)
+	{
 
 		ID = id;
 		name = Cname;
@@ -229,7 +238,8 @@ class User{
 		os = Cos;
 
 	}
-	public void becomePremium(User usr) {
+	public void becomePremium(User usr) 
+	{
 		// misunderstanding 
 		if ( balance < 0 )
 		{
@@ -242,7 +252,8 @@ class User{
 
 		}
 	}
-	public String getuser() {
+	public String getuser()
+	{
 		return 	name;
 	}
 
