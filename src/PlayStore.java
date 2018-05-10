@@ -78,14 +78,14 @@ class Game extends Content {
 		super(id, cname,CappPrice);
 		isMultiPlayer = isMultiPl;
 		os = cos;
-		//Game g1 = new Game (“G101”, “Pokemon”, 10, false, os1);
+		//Game g1 = new Game (â€œG101â€�, â€œPokemonâ€�, 10, false, os1);
 	}
 	
 	public Game(String id, String name,  boolean isMultiPl ,OS cos) {
 		super(id, name);
 		isMultiPlayer = isMultiPl;
 		os = cos;
-		// Game g1 = new Game (“G101”, “Pokemon”, false, os1);
+		// Game g1 = new Game (â€œG101â€�, â€œPokemonâ€�, false, os1);
 	}
 	
 	
@@ -155,13 +155,13 @@ public 	Magazine(String id, String name, int dwonloads, double AppPrice, String 
 public 	Magazine(String id, String name, double AppPrice, String Cpublisher,String Cgenre, int numberOfpages, String Ctitle) {
 	super ( id,  name,   AppPrice,  Cpublisher, Cgenre,  numberOfpages);
 	title = Ctitle;
-	//Magazine(“M21”, “Forbes”, 8, “Forbes Media”, “Business”, 50,“World’s richest under 30”);
+	//Magazine(â€œM21â€�, â€œForbesâ€�, 8, â€œForbes Mediaâ€�, â€œBusinessâ€�, 50,â€œWorldâ€™s richest under 30â€�);
 }	
 
 public 	Magazine(String id, String name,  String Cpublisher,String Cgenre, int numberOfpages, String Ctitle) {
 	super ( id,  name,  Cpublisher, Cgenre,  numberOfpages);
 	title = Ctitle;
-	//Magazine(“M21”, “Forbes”,  “Forbes Media”, “Business”, 50,“World’s richest under 30”);	
+	//Magazine(â€œM21â€�, â€œForbesâ€�,  â€œForbes Mediaâ€�, â€œBusinessâ€�, 50,â€œWorldâ€™s richest under 30â€�);	
 }
 	
 }	
@@ -175,7 +175,7 @@ class Comment{
 	Comment(User u, String comm){
 	user = u;
 	comment = comm;
-	//Comment cmnt = new Comment(u1, “This is a fantastic game!”);
+	//Comment cmnt = new Comment(u1, â€œThis is a fantastic game!â€�);
 	}
 	
 }
@@ -189,7 +189,7 @@ public OS(String OStype, int versionNum) {
 	TypeOfOS = 	OStype;
 	versionNumber = versionNum;
 	
-	//OS os1 = new OS(“Android”, 4);
+	//OS os1 = new OS(â€œAndroidâ€�, 4);
 	
 }
 	
@@ -267,12 +267,12 @@ public class PlayStore {
 PlayStore admin = new PlayStore();
 		//adding new readings
 		String[] authors ={"L. Tolstoy"};
-		Book b1 = new Book("R1", "War and Peace", 12, "The Russian Messenger‎", "Novel", 1225, authors);
+		Book b1 = new Book("R1", "War and Peace", 12, "The Russian Messengerâ€Ž", "Novel", 1225, authors);
 		String[] authors2 ={"F. Scott Fitzgerald"};
 		Book b2 = new Book("R2", "The great gatsby", 10, "Charles Scribner's Sons", "Novel", 180, authors2);
 		String[] authors3 ={"Thomas H. Cormen", "Charles E. Leiserson", "Ronald L. Rivest", "Clifford Stein"};
 		Book b3 = new Book("R3", "Introduction to algorithms", 100, "MIT Press", "Computer Science", 1312, authors3);
-		Magazine m1 = new Magazine("R4", "Forbes", 8, "Forbes Media‎", "Business", 50, "World’s richest under 30");
+		Magazine m1 = new Magazine("R4", "Forbes", 8, "Forbes Mediaâ€Ž", "Business", 50, "Worldâ€™s richest under 30");
 
 		admin.addContents(b1);
 		admin.addContents(b2);
@@ -344,7 +344,3 @@ PlayStore admin = new PlayStore();
 	}
 
 }
-
-
-
-// hi reham
