@@ -404,9 +404,9 @@ public class PlayStore {
 		
 		for (int j = 0; j<content.legth; j++)
 			{
-				if(ReadingsList[j].getGenre().equals(ReadingGenre))
+				if(content[j].getGenre().equals(ReadingGenre))
 				{
-					return ReadingsList[j].getReadingName();
+					return content[j].getReadingName();
 				}
 			}
 		}
