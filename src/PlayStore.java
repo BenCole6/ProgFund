@@ -106,6 +106,15 @@ abstract class Reading extends Content {
 
 	public ArrayList<Reading> ReadingsList = new ArrayList<>();
 
+	String getReadingName(String applicationName)
+	{
+		return applicationName;
+	}
+	
+	public String getGenre(String genre)
+	{
+		return genre;
+	}
 
 	public Reading (String id, String name, int downloads, double AppPrice, String Cpublisher,String Cgenre, int CnumberOfpages )
 	{
@@ -114,10 +123,6 @@ abstract class Reading extends Content {
 		genre = Cgenre; 
 		numberOfpages = CnumberOfpages;
 
-		public String getReadingName(String applicationName)
-		{
-			return applicationName;
-		}
 	}
 
 	public Reading (String id, String name, double AppPrice, String Cpublisher,String Cgenre, int CnumberOfpages )
@@ -141,12 +146,8 @@ abstract class Reading extends Content {
 		ReadingsList.add(id, name, AppPrice, publisher, genre, numberOfpages);
 
 	}
-
-	public String getGenre()
-	{
-		return genre;
-	}
 }
+
 ////////////////////////////////////////////////////////////////////////////////////
 class Book extends Reading {
 	String[] author;
@@ -301,6 +302,8 @@ class User {
 
 public class PlayStore {
 
+	Scanner userIn = new Scanner(System.in);
+	
 	/*
 	public static void main(String[] args) {
 
@@ -388,20 +391,20 @@ public class PlayStore {
 		g1.printAllReview();
 	} */
 
-	public interface showReadingofGenre
+	public String showReadingofGenre
 	{
-		public String showReadingOfGenre()
-		{
-			
-			for(int i = 0; i <content.length; i++)
-			if(content)
-			System.out.println("Please type the genre of book/magazine that you would like to retrieve");
-			System.out.println();
-			ReadingGenre = new userIn.next();
-
-			for (int j = 0; j<ReadingsList.legth; j++)
+		Scanner userIn = new Scanner(System.in);
+		
+		System.out.println("Please type the genre of book/magazine that you would like to retrieve");
+		System.out.println();
+		
+		String ReadingGenre = new userIn.next();
+		
+		
+		
+		for (int j = 0; j<content.legth; j++)
 			{
-				if( ReadingsList[j].getGenre().equals(ReadingGenre))
+				if(ReadingsList[j].getGenre().equals(ReadingGenre))
 				{
 					return ReadingsList[j].getReadingName();
 				}
