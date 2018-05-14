@@ -16,7 +16,7 @@ abstract class Content{
 	int numberOfdowns;
 	double appPrice;
 	ArrayList<Comment> review = new ArrayList<Comment>();
-
+	ArrayList<Content> content = new ArrayList<>();
 
 	public Content(String id, String Cname, int downloads, double CappPrice ,ArrayList<Comment> Creview ) 
 	{
@@ -27,7 +27,7 @@ abstract class Content{
 		review = Creview;
 
 	}	
-	
+
 	public Content(String id, String Cname, int downloads, double CappPrice  ) 
 	{
 		ID = id;
@@ -47,6 +47,7 @@ abstract class Content{
 			price = CappPrice;
 
 			}*/	
+
 	public Content(String id, String cname,  double CappPrice  ) 
 	{
 		ID = id;
@@ -71,24 +72,27 @@ abstract class Content{
 class Game extends Content {
 	boolean isMultiPlayer;
 	private OS os;
-	public Game(String id, String cname, int downloads, double CappPrice,  boolean isMultiPl ,OS cos) {
+
+	public Game(String id, String cname, int downloads, double CappPrice,  boolean isMultiPl ,OS cos) 
+	{
 		super(id, cname,downloads,CappPrice);
 		isMultiPlayer = isMultiPl;
 		os = cos;
 	}
 
-	public Game(String id, String cname,  double CappPrice,  boolean isMultiPl ,OS cos ) {
+	public Game(String id, String cname,  double CappPrice,  boolean isMultiPl ,OS cos )
+	{
 		super(id, cname,CappPrice);
 		isMultiPlayer = isMultiPl;
 		os = cos;
-		//Game g1 = new Game (â€œG101â€�, â€œPokemonâ€�, 10, false, os1);
+		//Game g1 = new Game ("G101", "Pokemon", 10, false, os1);
 	}
 
 	public Game(String id, String name,  boolean isMultiPl ,OS cos) {
 		super(id, name);
 		isMultiPlayer = isMultiPl;
 		os = cos;
-		// Game g1 = new Game (â€œG101â€�, â€œPokemonâ€�, false, os1);
+		// Game g1 = new Game ("G101", "Pokemon", false, os1);
 	}
 
 
@@ -100,9 +104,9 @@ abstract class Reading extends Content {
 	String genre;
 	int  numberOfpages;
 
-	ArrayList<Reading> ReadingsList = new ArrayList<>();
-	
-	
+	public ArrayList<Reading> ReadingsList = new ArrayList<>();
+
+
 	public Reading (String id, String name, int downloads, double AppPrice, String Cpublisher,String Cgenre, int CnumberOfpages )
 	{
 		super(id, name,downloads,AppPrice);
@@ -110,7 +114,10 @@ abstract class Reading extends Content {
 		genre = Cgenre; 
 		numberOfpages = CnumberOfpages;
 
-		ReadingsList.add(id, name, downloads, AppPrice, publisher, genre, numberOfpages);
+		public String getReadingName(String applicationName)
+		{
+			return applicationName;
+		}
 	}
 
 	public Reading (String id, String name, double AppPrice, String Cpublisher,String Cgenre, int CnumberOfpages )
@@ -121,19 +128,20 @@ abstract class Reading extends Content {
 		numberOfpages = CnumberOfpages;
 
 		ReadingsList.add(id, name, AppPrice, publisher, genre, numberOfpages);
+
 	}
-	
+
 	public Reading (String id, String name, String Cpublisher,String Cgenre, int CnumberOfpages )
 	{
 		super(id, name);
 		publisher = Cpublisher;
 		genre = Cgenre; 
 		numberOfpages = CnumberOfpages;
-		
+
 		ReadingsList.add(id, name, AppPrice, publisher, genre, numberOfpages);
 
 	}
-	
+
 	public String getGenre()
 	{
 		return genre;
@@ -293,15 +301,16 @@ class User {
 
 public class PlayStore {
 
+	/*
 	public static void main(String[] args) {
 
-		/*
-PlayStore admin = new PlayStore();
+
+		PlayStore admin = new PlayStore();
 		//adding new readings
-	 
+
  		ArrayList<Content> Contents = new ArrayList<Content>();
-		
- 		
+
+
 		String[] authors ={"L. Tolstoy"};
 		Book b1 = new Book("R1", "War and Peace", 12, "The Russian Messengerâ€Ž", "Novel", 1225, authors);
 		String[] authors2 ={"F. Scott Fitzgerald"};
@@ -376,15 +385,27 @@ PlayStore admin = new PlayStore();
 		g1.addReviews(cmnt2);
 
 		//showing all reviews including the replies on object g1
-		g1.printAllReview(); */
-	}
+		g1.printAllReview();
+	} */
 
-	public String showReadingOfGenre(ReadingsList)
+	public interface showReadingofGenre
 	{
-		System.out.println("Please type the genre of book/magazine that you would like to retrieve");
-		System.out.println();
-		ReadingGenre = new userIn.next();
-		
-		if(ReadingsList.contains(ReadingGenre);
+		public String showReadingOfGenre()
+		{
+			
+			for(int i = 0; i <content.length; i++)
+			if(content)
+			System.out.println("Please type the genre of book/magazine that you would like to retrieve");
+			System.out.println();
+			ReadingGenre = new userIn.next();
+
+			for (int j = 0; j<ReadingsList.legth; j++)
+			{
+				if( ReadingsList[j].getGenre().equals(ReadingGenre))
+				{
+					return ReadingsList[j].getReadingName();
+				}
+			}
+		}
 	}
 }
