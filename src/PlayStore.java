@@ -16,7 +16,6 @@ abstract class Content{
 	int numberOfdowns;
 	double appPrice;
 	ArrayList<Comment> review = new ArrayList<Comment>();
-	ArrayList<Content> content = new ArrayList<>();
 
 	public Content(String id, String Cname, int downloads, double CappPrice ,ArrayList<Comment> Creview ) 
 	{
@@ -45,7 +44,6 @@ abstract class Content{
 			applicationName = name;
 			numberOfdowns =  downloads;
 			price = CappPrice;
-
 			}*/	
 
 	public Content(String id, String cname,  double CappPrice  ) 
@@ -65,7 +63,6 @@ abstract class Content{
 		appPrice = 0;// the price 
 
 	}
-
 
 }
 /////////////////////////////////////////////////////////////
@@ -95,22 +92,20 @@ class Game extends Content {
 		// Game g1 = new Game ("G101", "Pokemon", false, os1);
 	}
 
-
-
 }
+
 ////////////////////////////////////////////////////////////////////////////////////////
+
 abstract class Reading extends Content {
 	String publisher;
 	String genre;
 	int  numberOfpages;
 
-	public ArrayList<Reading> ReadingsList = new ArrayList<>();
-
 	String getReadingName(String applicationName)
 	{
 		return applicationName;
 	}
-	
+
 	public String getGenre(String genre)
 	{
 		return genre;
@@ -132,8 +127,6 @@ abstract class Reading extends Content {
 		genre = Cgenre; 
 		numberOfpages = CnumberOfpages;
 
-		ReadingsList.add(id, name, AppPrice, publisher, genre, numberOfpages);
-
 	}
 
 	public Reading (String id, String name, String Cpublisher,String Cgenre, int CnumberOfpages )
@@ -142,8 +135,6 @@ abstract class Reading extends Content {
 		publisher = Cpublisher;
 		genre = Cgenre; 
 		numberOfpages = CnumberOfpages;
-
-		ReadingsList.add(id, name, AppPrice, publisher, genre, numberOfpages);
 
 	}
 }
@@ -188,14 +179,14 @@ class Magazine extends Reading {
 	{
 		super ( id,  name,   AppPrice,  Cpublisher, Cgenre,  numberOfpages);
 		title = Ctitle;
-		//Magazine(â€œM21â€�, â€œForbesâ€�, 8, â€œForbes Mediaâ€�, â€œBusinessâ€�, 50,â€œWorldâ€™s richest under 30â€�);
+		//Magazine("M21", "Forbes", 8, "Forbes Media", "Business", 50,"Worldâ€™s richest under 30");
 	}	
 
 	public 	Magazine(String id, String name,  String Cpublisher,String Cgenre, int numberOfpages, String Ctitle)
 	{
 		super ( id,  name,  Cpublisher, Cgenre,  numberOfpages);
 		title = Ctitle;
-		//Magazine(â€œM21â€�, â€œForbesâ€�,  â€œForbes Mediaâ€�, â€œBusinessâ€�, 50,â€œWorldâ€™s richest under 30â€�);	
+		//Magazine("M21", "Forbes",  "Forbes Media", "Business", 50,"Worldâ€™s richest under 30");	
 	}
 
 }	
@@ -214,6 +205,7 @@ class Comment{
 	}
 
 }
+
 /////////////////////////////////////////////////////////////////////////////////
 class OS{
 
@@ -225,11 +217,12 @@ class OS{
 		TypeOfOS = 	OStype;
 		versionNumber = versionNum;
 
-		//OS os1 = new OS(â€œAndroidâ€�, 4);
+		//OS os1 = new OS("Android", 4);
 
 	}
 
 }
+
 /////////////////////////////////////////////////////////////////////////////////
 class User {
 
@@ -258,6 +251,7 @@ class User {
 		os = Cos;
 
 	}
+
 	public void becomePremium(User usr) 
 	{
 		// misunderstanding 
@@ -272,6 +266,7 @@ class User {
 
 		}
 	}
+
 	public String getuser()
 	{
 		return 	name;
@@ -302,18 +297,15 @@ class User {
 
 public class PlayStore {
 
+	public ArrayList<Reading> ReadingsList = new ArrayList<>();
+
 	Scanner userIn = new Scanner(System.in);
-	
+
 	/*
 	public static void main(String[] args) {
-
-
 		PlayStore admin = new PlayStore();
 		//adding new readings
-
- 		ArrayList<Content> Contents = new ArrayList<Content>();
-
-
+		ArrayList<Content> Contents = new ArrayList<Content>();
 		String[] authors ={"L. Tolstoy"};
 		Book b1 = new Book("R1", "War and Peace", 12, "The Russian Messengerâ€Ž", "Novel", 1225, authors);
 		String[] authors2 ={"F. Scott Fitzgerald"};
@@ -321,12 +313,10 @@ public class PlayStore {
 		String[] authors3 ={"Thomas H. Cormen", "Charles E. Leiserson", "Ronald L. Rivest", "Clifford Stein"};
 		Book b3 = new Book("R3", "Introduction to algorithms", 100, "MIT Press", "Computer Science", 1312, authors3);
 		Magazine m1 = new Magazine("R4", "Forbes", 8, "Forbes Mediaâ€Ž", "Business", 50, "Worldâ€™s richest under 30");
-
 		admin.addContents(b1);
 		admin.addContents(b2);
 		admin.addContents(b3);
 		admin.addContents(m1);
-
 		//adding new games
 		OS os1 = new OS("Android", 4);
 		OS os2 = new OS("iOS", 10);
@@ -334,11 +324,9 @@ public class PlayStore {
 		Game g1 = new Game("g1", "Pokemon", 5, false, os1);
 		Game g2 = new Game("g2", "Pokemon", 5, false, os2);
 		Game g3 = new Game("g3", "MineCraft", 2, true, os1);
-
 		admin.addContents(g1);
 		admin.addContents(g2);
 		admin.addContents(g3);
-
 		//adding new users
 		User u1 = new User("u1", "John Doe", "0412000", 20, os1);
 		User u2 = new User("u2", "Jane Doe", "0412001", 120, os1);
@@ -348,67 +336,48 @@ public class PlayStore {
 		admin.addUsers(u1);
 		admin.addUsers(u1);
 		admin.addUsers(u1);
-
-
 		//Users are buying contents
 		u1.buyContent(b1);
 		u1.buyContent(b3);
 		u4.buyContent(g1);
 		u1.buyContent(m1);
-
-
 		//some users becoming premium and then buying contents
 		u4.becomePremium();
 		u4.buyContent(m1);
 		u2.becomePremium();
 		u2.buyContent(g2);
 		u2.buyContent(g1);
-
 		//showing contents bought by the user u2
 		u2.showContentsBought();
-
 		//showing all contents in the PlayStore
 		admin.showAllContents();
-
-
 		//showing all reading type of objects with the genre
-		admin.showReadingOfGenre("Novel");
-
-		//Student to do: call a method to show all games. What should be the parameters of that //method?   See Section 2, functionality 7
-
-
+	 	admin.showReadingOfGenre("Novel");
+	 	//Student to do: call a method to show all games. What should be the parameters of that //method?   See Section 2, functionality 7
 		Comment cmnt = new Comment(u1, "This is a fantastic game!");
 		g1.addReviews(cmnt);
 		Comment r1 = new Comment(u2, "I never liked this game!");
 		cmnt.addReply(r1);
 		Comment r2 = new Comment(u1, "Really??");
 		r1.addReply(r2);
-
 		Comment cmnt2 = new Comment(u3, "The game crashes frequently.");
 		g1.addReviews(cmnt2);
-
 		//showing all reviews including the replies on object g1
 		g1.printAllReview();
 	} */
 
-	public String showReadingofGenre
-	{
-		Scanner userIn = new Scanner(System.in);
-		
-		System.out.println("Please type the genre of book/magazine that you would like to retrieve");
-		System.out.println();
-		
-		String ReadingGenre = new userIn.next();
-		
-		
-		
-		for (int j = 0; j<content.legth; j++)
-			{
-				if(content[j].getGenre().equals(ReadingGenre))
-				{
-					return content[j].getReadingName();
-				}
-			}
-		}
-	}
+
+	 // Task 8
+
+	 public void showReadingGenre(String genreAsk)
+	 {
+		 for (int j = 0; j<Contents.size(); j++)
+		 {
+			 if(Contents[j].getGenre().equals(genreAsk))
+			 {
+				 System.out.println(Contents[j].getReadingName())
+
+			 }
+		 }
+	 }
 }
