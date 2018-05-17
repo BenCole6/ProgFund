@@ -10,13 +10,6 @@ public abstract class Reading extends Content {
 		this.genre = genre;
 		this.numPages = numPages;
 	}
-	
-	public Reading(String id, String name, String publisher, String genre) {
-		super(id, name, 0);
-		this.publisher = publisher;
-		this.genre = genre;
-		this.numPages = numPages;
-	}
 
 	public String getGenre() {
 		return this.genre;
