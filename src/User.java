@@ -115,7 +115,7 @@ public class User {
 			System.out.println(this.contentsBought.get(i).getName());
 		}
 
-		System.out.println("--End of the list--");
+		System.out.println("\n--End of the list--");
 		System.out.println();
 	}
 
