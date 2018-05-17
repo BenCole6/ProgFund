@@ -19,20 +19,22 @@ public class PlayStore {
 		if (item instanceof Game) {
 			String osType = ((Game) item).getOsReq().getType();
 			System.out.println(
-					contentType + " " + contentName + " for " + osType + " has been added to the PlayStore.\n");
+					contentType + " " + contentName + " for " + osType + " has been added to the PlayStore.");
 		} else {
-			System.out.println(contentType + " " + contentName + " has been added to the PlayStore.\n");
+			System.out.println(contentType + " " + contentName + " has been added to the PlayStore.");
 		}
+		System.out.println();
 	}
 
 	public void addUsers(User user) {
 		this.allUsers.add(user);
-		System.out.println(user.getName() + " has joined.\n");
+		System.out.println(user.getName() + " has joined.");
+		System.out.println();
 	}
 
 	public void showAllContents() {
 		// Print out all the contents
-		System.out.println("The PlayStore currently has the following contents:\n");
+		System.out.println("The PlayStore currently has the following contents:");
 
 		for (Map.Entry<String, Content> entry : this.allContents.entrySet()) {
 			String id = entry.getKey();

@@ -56,11 +56,13 @@ public class User {
 			this.spendMoney(100);
 			this.isPremium = true;
 
-			System.out.println("Congrats! " + this.name + " (" + this.id + ")" + " has become a premium user!\n");
+			System.out.println("Congrats! " + this.name + " (" + this.id + ")" + " has become a premium user!");
+			System.out.println();
 		} catch (UserBalanceException ube) {
 			System.err.println(this.name + " (" + this.id + ")"
 					+ " failed to upgrade to premium account due to the following error:");
 			System.err.println(ube.getReason());
+			System.out.println();
 		}
 	}
 
@@ -77,9 +79,11 @@ public class User {
 			try {
 				this.checkCompatibility((Game) item);
 			} catch (IncompatibleOsException ioe) {
-				System.err.println(this.name + " (" + this.id + ")" + " failed to buy " + item.getName()
-						+ " due to the following error:");
-				System.err.println(ioe.getReason() + "\n");
+				System.err.print(this.name + " (" + this.id + ")" + " failed to buy " + item.getName()
+				+ " due to the following error:\n");
+				System.err.println(ioe.getReason());
+				System.out.println();
+				
 				return;
 			}
 		}
@@ -92,11 +96,12 @@ public class User {
 			item.incrementNumDownloads(); // Increment the number of downloads of the content
 
 			System.out.println("Congrats! " + this.name + " (" + this.id + ")" + " has successfully purchased "
-					+ item.getName() + "!\n");
+					+ item.getName());
+			System.out.println();
 		} catch (UserBalanceException ube) {
-			System.err.println(this.name + " (" + this.id + ")" + " failed to buy " + item.getName()
-					+ " due to the following error:");
-			System.err.println(ube.getReason() + "\n");
+			System.err.print(this.name + " (" + this.id + ")" + " failed to buy " + item.getName()
+						+ " due to the following error:\n" + ube.getReason());
+			System.out.println();
 		}
 	}
 
@@ -107,7 +112,8 @@ public class User {
 			System.out.println(this.contentsBought.get(i).getName());
 		}
 
-		System.out.println("--End of the list--\n");
+		System.out.println("--End of the list--");
+		System.out.println();
 	}
 
 	private void checkCompatibility(Game g) throws IncompatibleOsException {
@@ -132,11 +138,11 @@ public class User {
 
 	private void spendMoney(double expense) throws UserBalanceException {
 		if (expense < 0) {
-			throw new UserBalanceException("Negative expense not allowed.");
+			throw new UserBalanceException("Negative expense not allowed.\n");
 		}
 
 		if (this.balance < expense) {
-			throw new UserBalanceException("Insufficient fund.");
+			throw new UserBalanceException("Insufficient funds.\n");
 		}
 
 		this.balance -= expense;
