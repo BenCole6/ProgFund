@@ -138,11 +138,11 @@ public class User {
 
 	private void spendMoney(double expense) throws UserBalanceException {
 		if (expense < 0) {
-			throw new UserBalanceException("Negative expense not allowed.\n");
+			throw new UserBalanceException("\nNegative expense not allowed.");
 		}
 
 		if (this.balance < expense) {
-			throw new UserBalanceException("Insufficient funds.\n");
+			throw new UserBalanceException("\nInsufficient funds.");
 		}
 
 		this.balance -= expense;

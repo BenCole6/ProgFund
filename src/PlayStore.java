@@ -35,6 +35,7 @@ public class PlayStore {
 	public void showAllContents() {
 		// Print out all the contents
 		System.out.println("The PlayStore currently has the following contents:");
+		System.out.println();
 
 		for (Map.Entry<String, Content> entry : this.allContents.entrySet()) {
 			String id = entry.getKey();
