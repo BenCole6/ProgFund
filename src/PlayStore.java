@@ -9,6 +9,7 @@ public class PlayStore {
 	public PlayStore() {
 		this.allContents = new HashMap<String, Content>();
 		this.allUsers = new ArrayList<User>();
+		// create copies of the HashMap and ArrayList
 	}
 
 	public void addContents(Content item) {

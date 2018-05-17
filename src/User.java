@@ -45,6 +45,7 @@ public class User {
 		// Check if the user is already a premium user.
 		if (this.isPremium) {
 			System.err.println("This user is already a premium user.");
+			System.out.println();
 			return;
 		}
 
@@ -52,16 +53,19 @@ public class User {
 		 * Try to deduct $100 premium fee and set the user to be premium. If an
 		 * exception is thrown, the user will stay non-premium.
 		 */
-		try {
-			this.spendMoney(100);
-			this.isPremium = true;
+		else {
+			try {
+				this.spendMoney(100);
+				this.isPremium = true;
 
-			System.out.println("Congrats! " + this.name + " (" + this.id + ")" + " has become a premium user!");
-			System.out.println();
-		} catch (UserBalanceException ube) {
-			System.err.println(this.name + " (" + this.id + ")"
-					+ " failed to upgrade to premium account due to the following error:");
-			System.err.println(ube.getReason());
+				System.out.println("Congrats! " + this.name + " (" + this.id + ")" + " has become a premium user!");
+				System.out.println();
+			} 
+			catch (UserBalanceException ube) {
+				System.err.print(this.name + " (" + this.id + ")" + " failed to upgrade to premium account due to the following error:");
+				System.err.println(ube.getReason());
+				//System.err.println();
+			}
 			System.out.println();
 		}
 	}
@@ -79,11 +83,10 @@ public class User {
 			try {
 				this.checkCompatibility((Game) item);
 			} catch (IncompatibleOsException ioe) {
-				System.err.print(this.name + " (" + this.id + ")" + " failed to buy " + item.getName()
-				+ " due to the following error:\n");
+				System.err.println(this.name + " (" + this.id + ")" + " failed to buy " + item.getName()
+				+ " due to the following error:");
 				System.err.println(ioe.getReason());
-				System.out.println();
-				
+				System.err.println();
 				return;
 			}
 		}
@@ -100,7 +103,7 @@ public class User {
 			System.out.println();
 		} catch (UserBalanceException ube) {
 			System.err.print(this.name + " (" + this.id + ")" + " failed to buy " + item.getName()
-						+ " due to the following error:\n" + ube.getReason());
+						+ " due to the following error:" + ube.getReason());
 			System.out.println();
 		}
 	}

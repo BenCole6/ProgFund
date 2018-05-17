@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 
 public abstract class Content {
+	// Abstract class provides skeleton criteria for creating any type of game, reading, etc
 	private String id; // Content ID
 	private String name; // Content name
 	private double price; // Content price
 	private int numDownloads; // Number of downloads
-	private ArrayList<Comment> review;
+	private ArrayList<Comment> review; // to store comments
 
 	public Content(String id, String name, double price) {
 		this.id = id;
