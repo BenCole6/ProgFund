@@ -65,7 +65,6 @@ public class User {
 				System.err.println(this.name + " (" + this.id + ")" + " failed to upgrade to premium account due to the following error:" + "\n" +ube.getReason());
 				System.err.println();
 			}
-			System.out.println();
 		}
 	}
 

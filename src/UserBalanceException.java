@@ -5,7 +5,7 @@ public class UserBalanceException extends Exception {
 	
 	public UserBalanceException(String reason) {
 		this.reason = reason;
-	}
+	} 
 	
 	public String getReason() {
 		return this.reason;
