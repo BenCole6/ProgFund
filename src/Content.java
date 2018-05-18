@@ -7,7 +7,7 @@ public abstract class Content {
 	private double price; // Content price
 	private int numDownloads; // Number of downloads
 	private ArrayList<Comment> review; // to store comments
-
+ 
 	public Content(String id, String name, double price) {
 		this.id = id;
 		this.name = name;

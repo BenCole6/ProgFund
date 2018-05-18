@@ -82,8 +82,7 @@ public class User {
 				this.checkCompatibility((Game) item);
 			} catch (IncompatibleOsException ioe) {
 				System.err.println(this.name + " (" + this.id + ")" + " failed to buy " + item.getName()
-				+ " due to the following error:");
-				System.err.println(ioe.getReason());
+				+ " due to the following error:" + "\n" +ioe.getReason());
 				System.err.println();
 				return;
 			}
