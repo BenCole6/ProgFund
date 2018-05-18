@@ -62,9 +62,8 @@ public class User {
 				System.out.println();
 			} 
 			catch (UserBalanceException ube) {
-				System.err.print(this.name + " (" + this.id + ")" + " failed to upgrade to premium account due to the following error:");
-				System.err.println(ube.getReason());
-				//System.err.println();
+				System.err.println(this.name + " (" + this.id + ")" + " failed to upgrade to premium account due to the following error:" + "\n" +ube.getReason());
+				System.err.println();
 			}
 			System.out.println();
 		}
